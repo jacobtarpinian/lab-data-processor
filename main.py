@@ -1,5 +1,5 @@
 from data_loader import load_data
-
+from plotter import plot_data
 
 while True:
 
@@ -23,6 +23,9 @@ while True:
 
     except PermissionError:
         print("Can't open the file. Close it in Excel and try again.\n")    
+
+
+    
 
 
 print("\nImported data:")

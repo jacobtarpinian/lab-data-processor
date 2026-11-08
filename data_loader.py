@@ -17,6 +17,10 @@ def load_data(file_path, sheet_name=0, header_row=0):
     #Check sheet exists
     sheets = pd.ExcelFile(file_path).sheet_names #array of names
     
+    #Check row input is valid
+    if header_row<0:
+        raise ValueError("Please input a valid header row. ")
+
     if isinstance(sheet_name, int):
         if sheet_name<0 or sheet_name >= len(sheets):
             raise ValueError("Sheet does not exist. ")
