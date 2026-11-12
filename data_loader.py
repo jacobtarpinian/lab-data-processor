@@ -10,4 +10,5 @@ def load_data(file_path, sheet_number=0, header_row=0):
     check_header(header_row)
 
     data = pd.read_excel(file_path, sheet_name=sheet_number, header=header_row)
+    data.columns = data.columns.str.strip()
     return data
